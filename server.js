@@ -78,7 +78,7 @@ const init = async () => {
         const username = req.payload.name;
         const user = users.find((user) => (user.name = username));
         if (user == null) {
-          return h.status(400).send("You are not allowed to visit this page"); //res.status(400).send('You are not authorized')
+          return h.status(400).send("You are not allowed to visit this page");
         } else {
           const user = { name: username };
           const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
